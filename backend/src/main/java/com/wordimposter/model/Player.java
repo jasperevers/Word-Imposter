@@ -1,14 +1,24 @@
+
 package com.wordimposter.model;
 
 public class Player {
-    public String id;
-    public String name;
+    private String id;
+    private String name;
+    private boolean isReady;
 
     public Player(String id, String name) {
         this.id = id;
         this.name = name;
+        this.isReady = false;
     }
 
-    // Optional: no-args constructor for JSON serialization
-    public Player() {}
+    // Getters and Setters
+    public String getId() { return id; }
+    public void setId(String id) { this.id = id; }
+
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+
+    public boolean isReady() { return isReady; }
+    public void setReady(boolean ready) { isReady = ready; }
 }
