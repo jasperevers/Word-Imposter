@@ -1,4 +1,4 @@
-package com.wordimposter.backend;
+package com.wordimposter;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package com.wordimposter.backend.model;
+package com.wordimposter.model;
 
 public class Player {
     public String id;

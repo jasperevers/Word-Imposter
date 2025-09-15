@@ -1,6 +1,6 @@
-package com.wordimposter.backend.controller;
+package com.wordimposter.controller;
 
-import com.wordimposter.backend.model.Player;
+import com.wordimposter.model.Player;
 import org.springframework.web.bind.annotation.*;
 import java.util.*;
 

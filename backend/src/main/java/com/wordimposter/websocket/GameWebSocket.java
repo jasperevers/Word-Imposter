@@ -1,4 +1,4 @@
-package com.wordimposter.backend.websocket;
+package com.wordimposter.websocket;
 
 import org.springframework.messaging.handler.annotation.*;
 import org.springframework.messaging.simp.SimpMessagingTemplate;

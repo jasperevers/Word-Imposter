@@ -1,4 +1,4 @@
-package com.wordimposter.backend.websocket;
+package com.wordimposter.websocket;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;
