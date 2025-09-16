@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, Button, FlatList, StyleSheet } from 'react-native';
-import { Game, Player } from '../types';
+import {View, Text, Button, FlatList, StyleSheet} from 'react-native';
+import {Game, Player} from '../types';
 
 type LobbyScreenProps = {
     game: Game;
@@ -16,7 +16,10 @@ export const LobbyScreen: React.FC<LobbyScreenProps> = ({
                                                             onStart,
                                                         }) => {
     const currentPlayer = game.players.find(p => p.id === playerId);
+    console.log('Current Player:', currentPlayer);
+
     const allPlayersReady = game.players.every(p => p.isReady);
+    console.log('All Players Ready:', allPlayersReady);
 
     return (
         <View style={styles.container}>
@@ -24,7 +27,7 @@ export const LobbyScreen: React.FC<LobbyScreenProps> = ({
             <FlatList
                 data={game.players}
                 keyExtractor={(item) => item.id}
-                renderItem={({ item }) => (
+                renderItem={({item}) => (
                     <View style={styles.playerItem}>
                         <Text>{item.name}</Text>
                         {item.isReady && <Text style={styles.readyText}>Ready!</Text>}
@@ -32,10 +35,10 @@ export const LobbyScreen: React.FC<LobbyScreenProps> = ({
                 )}
             />
             {!currentPlayer?.isReady && (
-                <Button title="I'm Ready" onPress={onReady} />
+                <Button title="I'm Ready" onPress={onReady}/>
             )}
             {allPlayersReady && game.players.length >= 3 && (
-                <Button title="Start Game" onPress={onStart} />
+                <Button title="Start Game" onPress={onStart}/>
             )}
         </View>
     );

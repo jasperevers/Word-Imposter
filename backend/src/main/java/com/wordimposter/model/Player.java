@@ -1,9 +1,12 @@
-
 package com.wordimposter.model;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Player {
     private String id;
     private String name;
+
+    @JsonProperty("isReady")
     private boolean isReady;
 
     public Player(String id, String name) {
