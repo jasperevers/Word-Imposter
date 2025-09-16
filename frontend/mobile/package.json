@@ -1,5 +1,6 @@
+
 {
-  "name": "mobile",
+  "name": "word-imposter",
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
@@ -9,17 +10,14 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "@stomp/stompjs": "^7.1.1",
-    "expo": "~54.0.4",
-    "expo-status-bar": "~3.0.8",
-    "react": "19.1.0",
-    "react-native": "0.81.4",
-    "sockjs-client": "^1.6.1"
+    "expo": "~49.0.0",
+    "expo-status-bar": "~1.6.0",
+    "react": "18.2.0",
+    "react-native": "0.72.0"
   },
   "devDependencies": {
-    "@types/react": "~19.1.0",
-    "@types/sockjs-client": "^1.5.4",
-    "typescript": "~5.9.2"
-  },
-  "private": true
+    "@babel/core": "^7.20.0",
+    "@types/react": "~18.2.14",
+    "typescript": "^5.1.3"
+  }
 }

@@ -1,11 +1,23 @@
-FROM node:18 AS builder
-WORKDIR /app
-COPY package.json package-lock.json ./
-RUN npm install
-COPY . .
-RUN npm run build
+FROM node:18-alpine
 
-FROM nginx:1.25-alpine
-COPY --from=builder /app/build /usr/share/nginx/html
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+WORKDIR /app
+
+# Install expo-cli globally
+RUN npm install -g expo-cli
+
+# Copy package files
+COPY package*.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy the rest of the app
+COPY . .
+
+# Expose the default Expo ports
+EXPOSE 19000
+EXPOSE 19001
+EXPOSE 19002
+
+# Start the Expo development server
+CMD ["npm", "start"]

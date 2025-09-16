@@ -1,5 +1,7 @@
 package com.wordimposter.controller;
 
+import org.springframework.web.server.ResponseStatusException;
+import org.springframework.http.HttpStatus;
 import com.wordimposter.model.Game;
 import com.wordimposter.model.Player;
 import org.springframework.web.bind.annotation.*;
@@ -22,7 +24,7 @@ public class LobbyController {
     public Map<String, Object> joinLobby(@PathVariable String code, @RequestBody Map<String, String> body) {
         String playerName = body.get("name");
         Game game = games.get(code);
-        
+
         if (game == null) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Game not found");
         }
@@ -32,10 +34,14 @@ public class LobbyController {
         game.addPlayer(player);
 
         return Map.of(
-            "playerId", playerId,
-            "players", game.getPlayers(),
-            "gameState", game.getState()
+                "playerId", playerId,
+                "players", game.getPlayers(),
+                "gameState", game.getState()
         );
+    }
+
+    public Game getGame(String code) {
+        return games.get(code);
     }
 
     private String generateGameCode() {
